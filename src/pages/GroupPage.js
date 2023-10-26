@@ -120,13 +120,17 @@ function GroupPage() {
             ))}
           </ul>
 
+          <div>
+            
+           
+          
           <UserSelector
             usuarios={usuarios} // Pasar la lista de todos los usuarios
             selectedUser={selectedUser}
             handleUserSelect={handleUserSelect}
           />
-          <button onClick={addUserToGroup}>Agregar Usuario al Grupo</button>
-
+          <button className={styles.addBtn} onClick={addUserToGroup}> Agregar Usuario al Grupo</button>
+          </div>
         </div>
       </div>
     </BackgroundLayout>

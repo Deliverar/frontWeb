@@ -80,3 +80,20 @@ li div button {
 li p {
     font-weight: bold;
 }
+
+.usersContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.usersContainer p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.addBtn {
+    min-width: 800px;
+}
