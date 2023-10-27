@@ -21,11 +21,11 @@ export const getAllUsers = async () => {
     // })
 
     const cns = attributes.map((userAttributes) => {
-      //@ts-ignore
       return userAttributes.find((att) => {
         if (att.type === "cn") {
           return att.values[0]
         }
+        return false;
       })
     })
 
