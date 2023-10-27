@@ -21,13 +21,14 @@ jobs:
       run: |
         npm install
         npm run build
-
-    - name: Sync directory to S3
-      uses: aws-actions/amazon-s3-sync-action@v0.3.0
+    - name: Setup AWS CLI
+      uses: aws-actions/configure-aws-credentials@v1
       with:
-        path: ./build
-        bucket: ${{ secrets.AWS_S3_BUCKET }}
-      env:
-        AWS_REGION: 'us-east-1'
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    - name: Sync files to S3 bucket
+      run: |
+        aws s3 sync build s3://deliver.ar-frontend --delete
+      with:
+
