@@ -1,14 +1,59 @@
-import styles from "../styles/deepRacerDashboard.module.css"
-import { useNavigate } from "react-router-dom"
+import * as React from "react";
+import styles from "../styles/deepRacerDashboard.module.css";
+import { useNavigate } from "react-router-dom";
+import { robots } from "../components/_data";
+import { useTable } from "react-table";
 
 function DeepRacerDashboard() {
-  const navigate = useNavigate()
+  const data = React.useMemo(() => robots, []);
+  const columns = React.useMemo(
+    () => [
+      {
+        Headers: "Rank",
+        accessor: "Rank",
+      },
+      {
+        Headers: "Alias",
+        accessor: "Alias",
+      },
+      {
+        Headers: "Mejor tiempo",
+        accessor: "BestLapTime",
+      },
+      {
+        Headers: "Fecha",
+        accessor: "SubmissionTime",
+      },
+      {
+        Headers: "Vueltas",
+        accessor: "LapCount",
+      },
+      {
+        Headers: "Colisiones",
+        accessor: "CollisionCount",
+      },
+      {
+        Headers: "Off track",
+        accessor: "OffTrackCount",
+      },
+      {
+        Headers: "#Modelos",
+        accessor: "SubmissionCount",
+      },
+    ],
+    []
+  );
+
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({ columns, data });
+
+  const navigate = useNavigate();
   const handleBack = () => {
-    navigate(-1)
-  }
+    navigate(-1);
+  };
   return (
     <div className={styles.background}>
-       <div className={styles.backBtn} onClick={handleBack}>
+      <div className={styles.backBtn} onClick={handleBack}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -30,19 +75,23 @@ function DeepRacerDashboard() {
         <section className={styles.deepSection}>
           <div>
             <img
-              src="/images/camioncito.jpg"
+              src="/images/car.png"
               alt="DeepRacer"
               className={styles.image}
             />
             <div className={styles.globalData}>
-              <p>Vehiculo mas rapido: Roman</p>
-              <p>Cantidad de giros: 30</p>
-              <p>Colisiones 4</p>
+              <p>
+                Vehiculo mas rapido: <b>Lucasnm</b>
+              </p>
+              <p>
+                Mejor tiempo: <b>1:03:21</b>
+              </p>
+              <p>Colisiones: 4</p>
             </div>
           </div>
           <div>
             <img
-              src="/images/lago.jpg"
+              src="/images/track.png"
               alt="DeepRacer"
               className={styles.image}
             />
@@ -52,7 +101,37 @@ function DeepRacerDashboard() {
             </div>
           </div>
         </section>
-        <table className={styles.table}>
+
+        <div className={styles.table}>
+          <table {...getTableProps()}>
+            <thead>
+              {headerGroups.map((headerGroup) => (
+                <tr {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map((column) => (
+                    <th {...column.getHeaderProps()}>
+                      {column.render("Headers")}
+                    </th>
+                  ))}
+                </tr>
+              ))}
+            </thead>
+            <tbody {...getTableBodyProps}>
+              {rows.map((row) => {
+                prepareRow(row);
+                return (
+                  <tr {...row.getRowProps()}>
+                    {row.cells.map((cell) => {
+                      return (
+                        <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        {/* <table className={styles.table}>
           <thead>
             <tr>
               <th></th>
@@ -105,10 +184,10 @@ function DeepRacerDashboard() {
               <td>Modelo 1</td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
       </div>
     </div>
-  )
+  );
 }
 
-export default DeepRacerDashboard
+export default DeepRacerDashboard;
