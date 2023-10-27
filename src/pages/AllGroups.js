@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function AllGroupsPage() {
   const [groups, setGroups] = useState([]);
+  const [searchText, setSearchText] = useState('');
 
   const navigate = useNavigate();
 
@@ -29,18 +30,25 @@ function AllGroupsPage() {
       });
   }, []);
 
+  const filteredGroups = groups.filter((groupName) =>
+    groupName.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   return (
     <BackgroundLayout>
       <div className={styles.container}>
         <h1>Grupos</h1>
 
         <div className={styles.groups}>
-          <ul>
-            <input
-              type="search"
-              placeholder="Ingrese el nombre del usuario..."
-            />
-            {groups.map((groupName, index) => (
+         
+          <input
+            type="search"
+            placeholder="Ingrese el nombre del grupo..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+            <ul>
+            {filteredGroups.map((groupName, index) => (
               <li key={index}>
                 <p onClick={() => handleGroupClick(groupName)}>{groupName}</p>
               </li>

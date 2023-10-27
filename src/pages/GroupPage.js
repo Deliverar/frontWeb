@@ -9,6 +9,7 @@ function GroupPage() {
   const [miembros, setMiembros] = useState([]);
   const [selectedUser, setSelectedUser] = useState("");
   const [usuarios, setUsuarios] = useState([]);
+  const [searchText, setSearchText] = useState("");
   const { groupName } = useParams(); // Utiliza useParams para obtener groupName
 
   const handleUserSelect = (user) => {
@@ -80,6 +81,10 @@ function GroupPage() {
     }
   };
 
+  const filteredMiembros = miembros.filter((miembro) =>
+    miembro.toLowerCase().includes(searchText.toLowerCase())
+  );
+
 
 
   return (
@@ -88,12 +93,16 @@ function GroupPage() {
         <h1>Usuarios del grupo {groupName}</h1>
 
         <div className={styles.groups}>
+          <input
+            type="search"
+            placeholder="Buscar miembros por usuario..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          
           <ul>
-            <input
-              type="search"
-              placeholder="Ingrese el nombre del usuario..."
-            />
-            {miembros.map((miembro, index) => (
+            {filteredMiembros.map((miembro, index) => (
+            
               <li key={index}>
                 <p>{miembro}</p>
                 <div>
