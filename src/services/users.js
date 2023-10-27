@@ -1,6 +1,6 @@
 export const getAllUsers = async () => {
   try {
-    const res = await fetch("http://localhost/api/GetAllUsuarios")
+    const res = await fetch("http://abmpersonalinternoapi.deliver.ar/api/GetAllUsuarios")
 
     const data = await res.json()
 
@@ -41,7 +41,7 @@ export const getAllUsers = async () => {
 
 export const getUserByCn = async (cn) => {
   try {
-    const res = await fetch(`http://localhost/api/BuscarUsuariosPorCN?cn=${cn}`)
+    const res = await fetch(`http://abmpersonalinternoapi.deliver.ar/api/BuscarUsuariosPorCN?cn=${cn}`)
 
     const data = await res.json()
 
@@ -83,7 +83,7 @@ export const createUser = async (user, selectedAvatar) => {
     // Agregar la imagen en base64 al objeto de usuario
     user.avatar = selectedAvatar;
 
-    const res = await fetch("http://localhost/api/usuarios", {
+    const res = await fetch("http://abmpersonalinternoapi.deliver.ar/api/usuarios", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -99,7 +99,7 @@ export const createUser = async (user, selectedAvatar) => {
 
 
 export const editUser = async (id, newUser) => {
-  const res = await fetch(`http://localhost/api/usuarios/${id}`, {
+  const res = await fetch(`http://abmpersonalinternoapi.deliver.ar/api/usuarios/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -113,7 +113,7 @@ export const editUser = async (id, newUser) => {
 
 export const getAllGroups = async () => {
   try {
-    const res = await fetch("http://localhost/api/grupos-ldap") // Ajusta la URL según tu configuración
+    const res = await fetch("http://abmpersonalinternoapi.deliver.ar/api/grupos-ldap") // Ajusta la URL según tu configuración
 
     if (res.ok) {
       const data = await res.json()
@@ -136,7 +136,7 @@ export const getAllGroups = async () => {
 // users.js
 export const addUserToGroupAPI = (grupo, usuario) => {
   return fetch(
-    `http://localhost/api/AgregarUsuariosGrupo?grupo=${grupo}&usr=${usuario}`,
+    `http://abmpersonalinternoapi.deliver.ar/api/AgregarUsuariosGrupo?grupo=${grupo}&usr=${usuario}`,
     {
       method: "PUT",
     }
@@ -163,7 +163,7 @@ export const addUserToGroupAPI = (grupo, usuario) => {
 
 export const login = async (email, password) => {
   try {
-    const response = await fetch(`http://localhost/api/LoginUid?uid=${email}&pass=${password}`);
+    const response = await fetch(`http://abmpersonalinternoapi.deliver.ar/api/LoginUid?uid=${email}&pass=${password}`);
 
     if (response.status === 200) {
       const result = await response.json();
