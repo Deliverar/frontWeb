@@ -59,7 +59,7 @@ function LoginPage() {
       <form className={styles.loginForm}>
         <div className={styles.titleContainer}>
           <img src="/images/logo.png" alt="Logo" className={styles.logoImg} />
-          <h1 className={styles.title}>Bienvenido</h1>
+          <h1 className={styles.title}>Bienvenid@</h1>
         </div>
         <div className={styles.formInside}>
           <label htmlFor="user">Usuario</label>

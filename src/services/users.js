@@ -12,10 +12,10 @@ export const getAllUsers = async () => {
 
     const usersUidList = []
 
-    const usersUid = attributes.map((userAttributes) => {
+     const usersUid = attributes.map((userAttributes) => {
        return userAttributes.find((att) => {
          if (att.type == "uid") {
-          usersUidList.push(att.values[0])
+           usersUidList.push(att.values[0])
          }
        })
      })

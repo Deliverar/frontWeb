@@ -26,7 +26,7 @@ export const robots = [
         SubmissionTime: '1698273335875',
         LapCount: '3',
         CollisionCount: '0',
-        OffTrackCount: '19',
+        OffTrackCount: '20',
         SubmissionCount: '3',
       },
       {
