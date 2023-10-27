@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; // Importa useParams
 import BackgroundLayout from "../layouts/BackgroundLayout";
 import styles from "../styles/allGroups.module.css";
-import { getAllGroups, getAllUsers, addUserToGroupAPI } from "../services/users"
+import { getAllUsers, addUserToGroupAPI } from "../services/users"
 import UserSelector from "../components/UserSelector";
 
 function GroupPage() {

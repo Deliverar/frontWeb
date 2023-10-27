@@ -12,19 +12,20 @@ export const getAllUsers = async () => {
 
     const usersUidList = []
 
-    const usersUid = attributes.map((userAttributes) => {
-      return userAttributes.find((att) => {
-        if (att.type == "uid") {
-          usersUidList.push(att.values[0])
-        }
-      })
-    })
+    // const usersUid = attributes.map((userAttributes) => {
+    //   return userAttributes.find((att) => {
+    //     if (att.type == "uid") {
+    //       usersUidList.push(att.values[0])
+    //     }
+    //   })
+    // })
 
     const cns = attributes.map((userAttributes) => {
       return userAttributes.find((att) => {
-        if (att.type == "cn") {
+        if (att.type === "cn") {
           return att.values[0]
         }
+        return false;
       })
     })
 
@@ -45,21 +46,21 @@ export const getUserByCn = async (cn) => {
 
     const data = await res.json()
 
-    const name = data[0].attributes.find((att) => att.type == "cn")
+    const name = data[0].attributes.find((att) => att.type === "cn")
       .values[0]
 
-    const lastName = data[0].attributes.find((att) => att.type == "sn")
+    const lastName = data[0].attributes.find((att) => att.type === "sn")
       .values[0]
 
     const state = "Activo"
 
-    const dni = data[0].attributes.find((att) => att.type == "carLicense")
+    const dni = data[0].attributes.find((att) => att.type === "carLicense")
       .values[0]
 
-    const birthDate = data[0].attributes.find((att) => att.type == "postalCode")
+    const birthDate = data[0].attributes.find((att) => att.type === "postalCode")
       .values[0]
 
-    const email = data[0].attributes.find((att) => att.type == "uid").values[0]
+    const email = data[0].attributes.find((att) => att.type === "uid").values[0]
 
     const avatarURL = data[0].attributes.find((att) => att.type === "givenName").values[0];
 

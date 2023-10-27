@@ -9,7 +9,6 @@ function CreateAccountForm({ isEdit = false }) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
     reset,
   } = useForm()
   const [selectedAvatar, setSelectedAvatar] = useState(null);
@@ -67,7 +66,7 @@ function CreateAccountForm({ isEdit = false }) {
 
       })
     }
-  }, [])
+  }, [id, isEdit])
 
   return (
     <div>
