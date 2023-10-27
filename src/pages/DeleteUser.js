@@ -17,7 +17,7 @@ function DeleteUserPage() {
     if (confirmDelete) {
       // Usuario confirmó la eliminación
       try {
-        fetch(`http://localhost/api/deleteUsers/${id}`, {
+        fetch(`http://abmpersonalinternoapi.deliver.ar/api/deleteUsers/${id}`, {
           method: 'DELETE',
         })
           .then((response) => {
