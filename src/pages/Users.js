@@ -55,7 +55,8 @@ function Users() {
             />
             {(searchResults.length > 0 ? searchResults : users).map((user) => {
               return (
-                <li key={crypto.randomUUID()}>
+                //<li key={crypto.randomUUID()}>
+                <li>
                   <p>{user.uid}</p>
                   <p className={styles.id}>/{user.cn}</p>
                   <div>
