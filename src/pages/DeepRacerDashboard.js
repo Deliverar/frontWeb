@@ -36,7 +36,7 @@ function convertMillisecondsToDateTimeday(milliseconds) {
 
   useEffect(() => {
     
-    axios.get('http://localhost/api/deepracer/leaderboard')
+    axios.get('http://abmpersonalinternoapi.deliver.ar/api/deepracer/leaderboard')
       .then(response => {
         setRaceData(response.data);
       })
