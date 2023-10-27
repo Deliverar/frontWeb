@@ -16,7 +16,7 @@ function AllGroupsPage() {
 
   useEffect(() => {
     // Realiza una solicitud GET al endpoint /api/grupos-ldap
-    fetch("http://localhost/api/grupos-ldap")
+    fetch("http://abmpersonalinternoapi.deliver.ar/api/grupos-ldap")
       .then((response) => response.json())
       .then((data) => {
         // Mapea la respuesta para obtener los nombres de los grupos

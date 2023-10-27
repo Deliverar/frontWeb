@@ -12,13 +12,13 @@ export const getAllUsers = async () => {
 
     const usersUidList = []
 
-    // const usersUid = attributes.map((userAttributes) => {
-    //   return userAttributes.find((att) => {
-    //     if (att.type == "uid") {
-    //       usersUidList.push(att.values[0])
-    //     }
-    //   })
-    // })
+    const usersUid = attributes.map((userAttributes) => {
+       return userAttributes.find((att) => {
+         if (att.type == "uid") {
+          usersUidList.push(att.values[0])
+         }
+       })
+     })
 
     const cns = attributes.map((userAttributes) => {
       return userAttributes.find((att) => {

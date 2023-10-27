@@ -48,7 +48,7 @@ function GroupPage() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost/api/miembrosGrupo?cn=${groupName}`)
+    fetch(`http://abmpersonalinternoapi.deliver.ar/api/miembrosGrupo?cn=${groupName}`)
       .then((response) => response.json())
       .then((data) => {
         const miembros = data.miembros;
@@ -63,7 +63,7 @@ function GroupPage() {
   const eliminarUsuarioDelGrupo = (usuario) => {
     const confirmacion = window.confirm(`¿Seguro que desea eliminar a ${usuario}?`);
     if (confirmacion) {
-      fetch(`http://localhost/api/EliminarUsuariosGrupo?grupo=${groupName}&usr=${usuario}`, {
+      fetch(`http://abmpersonalinternoapi.deliver.ar/api/EliminarUsuariosGrupo?grupo=${groupName}&usr=${usuario}`, {
         method: "DELETE",
       })
         .then((response) => {
