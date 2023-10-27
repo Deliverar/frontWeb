@@ -17,6 +17,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Print an environment variable
+        run: echo "The value of AWS_S3_BUCKET is $AWS_S3_BUCKET"
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+
     - name: Install and Build
       run: |
         npm install
