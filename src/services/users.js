@@ -166,9 +166,14 @@ export const login = async (email, password) => {
     const response = await fetch(`http://localhost/api/LoginUid?uid=${email}&pass=${password}`);
 
     if (response.status === 200) {
-      return await response.json();
+      const result = await response.json();
+
+      if (result.status === "ok") {
+        return "Autenticación exitosa";
+      } else {
+        return "Credenciales incorrectas";
+      }
     } else {
-      // Manejar otros casos si es necesario
       return "Credenciales incorrectas";
     }
   } catch (error) {
