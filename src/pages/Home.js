@@ -23,7 +23,7 @@ function Home() {
       />
       <Redirect
         title={"Gestion de grupos"}
-        to={"/groups"}
+        to={"/allgroups"}
         image={"/images/home-fav.jpg"}
       />
       <Redirect
@@ -31,11 +31,11 @@ function Home() {
         to={"/deepracerdashboard"}
         image={"/images/aws.jpg"}
       />
-      <Redirect
+      {/* <Redirect
         title={"Todos los grupos"}
         to={"/allgroups"}
         image={"/images/aws.jpg"}
-      />
+      /> */}
      
     </div>
   )
