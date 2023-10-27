@@ -45,11 +45,11 @@ function LoginPage() {
         }
         console.log("Redirigiendo a /home");
         navigate("/home");
-      } else if (response === "Credenciales incorrectas") {
+        } else {
         setMessage("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
-      } else if (response === "Error de inicio de sesión") {
-        setMessage("Error de inicio de sesión. Por favor, inténtalo de nuevo.");
       }
+    } else {
+      setMessage("Por favor, ingrese un correo electrónico válido y una contraseña válida.");
     }
   };
   
