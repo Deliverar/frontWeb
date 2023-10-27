@@ -66,7 +66,7 @@ function CreateAccountForm({ isEdit = false }) {
 
       })
     }
-  }, [])
+  }, [id, isEdit])
 
   return (
     <div>
