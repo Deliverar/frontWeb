@@ -1,17 +1,17 @@
 name: Test Cypress
 on: [push]
 jobs:
-  # cypress-run:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2.3.4
-  #     - name: Cypress.io
-  #       uses: cypress-io/github-action@v4.1.0
-  #       with:
-  #         start: npm start
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+      - name: Cypress.io
+        uses: cypress-io/github-action@v4.1.0
+        with:
+          start: npm start
   deploy-to-aws:
-    # needs: cypress-run
+    needs: cypress-run
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
