@@ -1,85 +1,92 @@
 .background {
-    background-color: #F0F8FF;
-    width: 1920px;
-    height: 1080px;
-    border-radius: 8px;
-    border: 1px solid #0F87DA;
+  background-color: #f0f8ff;
+  width: 1920px;
+  height: 1080px;
+  border-radius: 8px;
+  border: 1px solid #0f87da;
 }
 
 .content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    margin-top: 200px;
-    align-items: center;
-    gap: 100px;
-    flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: 200px;
+  align-items: center;
+  gap: 100px;
+  flex-direction: column;
 }
 .deepSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
 }
 
 .deepSection div {
-    background-color: white;
-    width: 100%;
-    min-width: 400px;
-    color: black;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+  background-color: white;
+  width: 100%;
+  min-width: 400px;
+  color: black;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
 .deepSection img {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .globalData {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 /* Estilo para centrar la tabla */
 .table {
-    margin: 0 auto;
-    width: 80%; /* Ajusta el ancho de la tabla según tus necesidades */
-    text-align: center;
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-  }
+  margin: 0 auto;
+  width: 80%; /* Ajusta el ancho de la tabla según tus necesidades */
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
   
-  /* Estilo para centrar el contenido de las celdas del cuerpo de la tabla */
-  .table tbody td {
-    vertical-align: middle;
-  }
-  
-  /* Estilo para centrar el encabezado de la tabla */
-  .table thead th {
-    text-align: center;
-    padding: 0 0 4px 0;
-    border-bottom: 1px solid gray;
-  }
-  .backBtn {
-    position: absolute;
-    left: 30px;
-    top: 80px;
-    border: 1px solid #0F87DA;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
+}
+
+/* Estilo para centrar el contenido de las celdas del cuerpo de la tabla */
+.table tbody td {
+  vertical-align: middle;
+}
+
+/* Estilo para centrar el encabezado de la tabla */
+.table thead th {
+  text-align: center;
+  padding: 0 40px 4px 50px;
+  border-bottom: 1px solid gray;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+}
+.backBtn {
+  position: absolute;
+  left: 30px;
+  top: 80px;
+  border: 1px solid #0f87da;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .backBtn svg {
-    height: 20px;
-    width: 20px;
+  height: 20px;
+  width: 20px;
 }
