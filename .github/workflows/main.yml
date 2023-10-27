@@ -30,5 +30,3 @@ jobs:
     - name: Sync files to S3 bucket
       run: |
         aws s3 sync build s3://deliver.ar-frontend --delete
-      with:
-
