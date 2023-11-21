@@ -1,9 +1,15 @@
 .background {
   background-color: #f0f8ff;
   width: 1920px;
-  height: 1080px;
+  height: auto;
   border-radius: 8px;
   border: 1px solid #0f87da;
+   
+}
+
+.scrollableTable {
+  overflow: auto; 
+  max-height: 400px;
 }
 
 .content {
@@ -16,6 +22,8 @@
   flex-direction: column;
 }
 .deepSection {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,6 +50,7 @@
 }
 
 .globalData {
+  
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -49,16 +58,18 @@
 
 /* Estilo para centrar la tabla */
 .table {
-  margin: 0 auto;
-  width: 80%; /* Ajusta el ancho de la tabla según tus necesidades */
+  margin: 20px auto;
+  width: 100%; /* Ajusta el ancho de la tabla según tus necesidades */
+  height: 900px;
   text-align: center;
   background-color: white;
   border-radius: 8px;
   padding: 20px;
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Roboto", sans-serif;
   
 }
+
 
 /* Estilo para centrar el contenido de las celdas del cuerpo de la tabla */
 .table tbody td {
