@@ -4,7 +4,7 @@ import styles from "../styles/login.module.css"
 import { login } from "../services/users";
 
 
-function LoginPage() {
+function LoginPage( navigate) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -43,8 +43,12 @@ function LoginPage() {
           localStorage.setItem("email", email);
           localStorage.setItem("password", password);
         }
+        if(email==='DeepRacerPERFIL'){
+          console.log("Redirigiendo a /DeepRacerDashboard");
+          navigate("/DeepRacerDashboard", { data: email });
+        }else{
         console.log("Redirigiendo a /home");
-        navigate("/home");
+        navigate("/home");}
         } else {
         setMessage("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
       }
