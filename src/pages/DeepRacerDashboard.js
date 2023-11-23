@@ -44,37 +44,21 @@ function convertMillisecondsToDateTimeday(milliseconds) {
 
         const usuarios = [
           {
-            Alias: "Racer1",
-            NombreApellido: "",
-            DNI: "",
+            Alias: "Lucas-Mino",
+            NombreApellido: "Miño Lucas",
+            DNI: "32758963",
           },{
-            Alias: "Racer2",
-            NombreApellido: "",
-            DNI: "",
+            Alias: "BackloggedCoder#2267",
+            NombreApellido: "Chan Ivan Matias",
+            DNI: "42852741",
           },{
-            Alias: "Racer3",
-            NombreApellido: "",
-            DNI: "",
+            Alias: "PedroBlanco",
+            NombreApellido: "Blanco Pedro Martin",
+            DNI: "43745125",
           },{
-            Alias: "Racer4",
-            NombreApellido: "",
-            DNI: "",
-          },{
-            Alias: "Racer5",
-            NombreApellido: "",
-            DNI: "",
-          },{
-            Alias: "Racer6",
-            NombreApellido: "",
-            DNI: "",
-          },{
-            Alias: "Racer7",
-            NombreApellido: "",
-            DNI: "",
-          },{
-            Alias: "Racer8",
-            NombreApellido: "",
-            DNI: "",
+            Alias: "BooleanPoint#5522",
+            NombreApellido: "Andres Breuer",
+            DNI: "31586985",
           },
         ];
         setRaceDataUsuarios(usuarios);
@@ -400,7 +384,7 @@ function convertMillisecondsToDateTimeday(milliseconds) {
           },
           // ... Agrega más elementos si es necesario
         ];
-        setRaceData(exampleRaceData);*/
+        setRaceData(exampleRaceData);
         const usuarios = [
           {
             Alias: "Racer1",
@@ -436,7 +420,7 @@ function convertMillisecondsToDateTimeday(milliseconds) {
             DNI: "",
           },
         ];
-        setRaceDataUsuarios(usuarios);
+        setRaceDataUsuarios(usuarios);*/
         console.error('Error al obtener datos de la API', error);
     
       });
@@ -452,14 +436,14 @@ function convertMillisecondsToDateTimeday(milliseconds) {
   const notificarCarrera = () => {
 
 
-    axios.post('http://abmpersonalinternoapi.deliver.ar/api/notificarCarrera')
+    axios.post('http://abmpersonalinternoapi.deliver.ar/api/deepracer/notify')
       .then(response => {
         
-        console.log('Carrera notificada con éxito');
+        alert('Carrera notificada con éxito');
       })
       .catch(error => {
         
-        console.error('Error al notificar carrera');
+        alert('Error al notificar carrera');
       });
   };
 
