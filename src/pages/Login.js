@@ -53,7 +53,7 @@ function LoginPage() {
       setMessage("Por favor, ingrese un correo electrónico válido y una contraseña válida.");
     }
   };
-  
+  //Lucas
   
   return (
     <div className={styles.formContainer}>
